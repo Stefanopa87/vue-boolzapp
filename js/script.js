@@ -2,6 +2,13 @@ function init(){
   new Vue({
     el: '#app',
     data:{
+        profile:{
+            name: 'Stefano',
+            avatar: 'profilo.png',
+        },
+
+
+
         contacts: [
         {
             name: 'Michele',

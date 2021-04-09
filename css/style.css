@@ -10,22 +10,36 @@ body{
 }
 
 .container{
-    background-color: seagreen;
+    background-color: #008786;
     height: calc(100vh - 30px);
     margin: 15px auto;
 }
 .row{
     height: 100%;
+    border-radius: 5px;
 }
 
 #nameList{
     background-color: #ECEEED;
     height: 100%;
+    border-radius: 20px;
     padding: 0;
 
 }
-.profile{
-    justify-content: center;
+.profile_icons{
+    float: right;
+    margin: 10px 20px;
+}
+
+.profile_icons i{
+    padding: 10px;
+    color: #898E8F;
+    cursor: pointer;
+}
+
+.input-group{
+    
+    cursor: pointer;
 }
 
 ul{
@@ -39,6 +53,7 @@ ul li{
     height: 50px;
     background-color: #fff;
     border-bottom: solid 1px #718792;
+    cursor: pointer;
 }
 
 img{
@@ -48,7 +63,9 @@ img{
 }
 
 #msgList{
-    background-color: steelblue;
+    background-image: url(../img/sfondo.jpg);
+    background-position: bottom;
     height: 100%;
+    border-radius: 20px;
 
 }

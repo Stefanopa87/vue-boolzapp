@@ -23,21 +23,20 @@
             <div id="nameList" class="col-3">
                 <div class="profile">
 
-                    <img src="img/profilo.png" alt="foto profilo">
+                    <img :src="'img/' + profile['avatar']" alt="foto profilo">
 
-                    <i class="fas fa-comment-alt"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-
-                </div>
-
-                <div>
-
-                    <input type="text">
-                        
-                    <button @click="add" class="btn btn-light"> Search <i class="fas fa-search"></i></button>
+                    <div class="profile_icons">
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
 
                 </div>
-
+                    <div @click="add" @keyUp.enter="add" class="input-group mb-1">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search Name" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>                 
+                             
 
                 <ul>
                     <li v-for="contact in contacts"> 
