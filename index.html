@@ -20,7 +20,10 @@
 <body>
     <div id="app" class="container">
         <div class="row">
+            <!-- NAME LIST -->
             <div id="nameList" class="col-3">
+
+                <!-- foto profilo -->
                 <div class="profile">
 
                     <img :src="'img/' + profile['avatar']" alt="foto profilo">
@@ -29,30 +32,43 @@
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
-
                 </div>
-                    <div @click="add" @keyUp.enter="add" class="input-group mb-1">
-                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                        <input type="text" class="form-control" placeholder="Search Name" aria-label="Username"
-                            aria-describedby="basic-addon1">
-                    </div>                 
-                             
 
+                <!-- area search -->
+                <div @click="add" @keyUp.enter="add" class="input-group mb-1">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Search Name" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>                 
+                             
+                <!-- lista contatti -->
                 <ul>
                     <li v-for="contact in contacts"> 
                         <img :src="'img/img' + contact['avatar'] + '.jpg'" alt="foto utenti">
                        <span >{{contact['name']}}</span>
 
                     </li>
-
-
                 </ul>
-
             </div>
-            
-            <div id="msgList" class="col-9">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae ad id, vero odio ipsa repellat corporis recusandae veritatis temporibus quod repudiandae aliquam voluptate itaque dicta minima reiciendis iure consequatur officiis?
 
+
+            <!-- MSG LIST -->
+            <div id="msgList" class="col-9">
+
+                <!-- banner alto -->
+                <div class="bannerTop">
+
+
+                </div>
+
+                <!-- input scrittura -->
+                <div class="input-group mb-3 typeMsg">
+                    <span class="input-group-text" id="basic-addon1"><i class="far fa-smile"></i></span>
+                    <input type="text" class="form-control" placeholder="Type a message"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-share"></i></span>
+                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-microphone-alt"></i></span>
+                </div>
 
             </div>
             

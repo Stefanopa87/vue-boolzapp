@@ -19,13 +19,15 @@ body{
     border-radius: 5px;
 }
 
+/* NAME LIST */
 #nameList{
     background-color: #ECEEED;
     height: 100%;
     border-radius: 20px;
     padding: 0;
-
 }
+
+/* area search */
 .profile_icons{
     float: right;
     margin: 10px 20px;
@@ -37,19 +39,18 @@ body{
     cursor: pointer;
 }
 
-.input-group{
-    
+.input-group{    
     cursor: pointer;
 }
 
+/* lista contatti */
 ul{
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-ul li{
-    
+ul li{    
     height: 50px;
     background-color: #fff;
     border-bottom: solid 1px #718792;
@@ -62,10 +63,28 @@ img{
     border-radius: 20px;
 }
 
+/* MSG LIST */
 #msgList{
     background-image: url(../img/sfondo.jpg);
     background-position: bottom;
     height: 100%;
+    padding: 0;
     border-radius: 20px;
+    position: relative;
+    border-left: solid 1px #718792;
+}
 
+/* banner alto */
+.bannerTop{
+    background-color: #ECEEED;
+    width: 100%;
+    height: 100px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;    
+}
+
+/* input scrittura */
+.typeMsg{    
+    position: absolute;
+    bottom: 0;        
 }

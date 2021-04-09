@@ -77,7 +77,7 @@ function init(){
             ],
         },
         {
-            name: 'Luisa',
+            name: 'Ilaria',
             avatar: '_4',
             visible: true,
             messages: [
