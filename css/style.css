@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+body{
+    background-color: red;
+}
+
+.container{
+    background-color: seagreen;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#nameList{
+    background-color: sienna;
+
+}
+
+#msgList{
+    background-color: steelblue;
+
+}
