@@ -18,14 +18,36 @@
 </head>
 
 <body>
-    <div id="app" class="container mt-3">
+    <div id="app" class="container">
         <div class="row">
             <div id="nameList" class="col-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nihil facere reiciendis repudiandae nulla illum maiores omnis, ratione accusamus optio inventore ipsam culpa placeat assumenda? Dolorem ducimus hic quis unde?
+                <div class="profile">
 
-    
-                <button @click="add">cliccami</button>
+                    <img src="img/profilo.png" alt="foto profilo">
 
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+
+                </div>
+
+                <div>
+
+                    <input type="text">
+                        
+                    <button @click="add" class="btn btn-light"> Search <i class="fas fa-search"></i></button>
+
+                </div>
+
+
+                <ul>
+                    <li v-for="contact in contacts"> 
+                        <img :src="'img/img' + contact['avatar'] + '.jpg'" alt="foto utenti">
+                       <span >{{contact['name']}}</span>
+
+                    </li>
+
+
+                </ul>
 
             </div>
             

@@ -6,22 +6,49 @@
 }
 
 body{
-    background-color: red;
+    background-color: #008786;
 }
 
 .container{
     background-color: seagreen;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    height: calc(100vh - 30px);
+    margin: 15px auto;
+}
+.row{
+    height: 100%;
 }
 
 #nameList{
-    background-color: sienna;
+    background-color: #ECEEED;
+    height: 100%;
+    padding: 0;
 
+}
+.profile{
+    justify-content: center;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    
+    height: 50px;
+    background-color: #fff;
+    border-bottom: solid 1px #718792;
+}
+
+img{
+    height: 40px;
+    margin: 5px 10px;
+    border-radius: 20px;
 }
 
 #msgList{
     background-color: steelblue;
+    height: 100%;
 
 }
