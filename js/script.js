@@ -7,8 +7,6 @@ function init(){
             avatar: 'profilo.png',
         },
 
-
-
         contacts: [
         {
             name: 'Michele',
@@ -95,8 +93,12 @@ function init(){
         },
     ],
 
+    selectedContact: "",
+
     
     },
+
+
 
     methods:{
       add: function(){
@@ -105,11 +107,19 @@ function init(){
         console.log('ciao');
       },
 
+      showMsg: function(contact){
+
+          this.selectedContact= "";
+          
+          this.selectedContact= contact;
+
+        
+      }
+
       
     },
   });
 }
-
 
 
 document.addEventListener('DOMContentLoaded', init);

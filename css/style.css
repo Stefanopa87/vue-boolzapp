@@ -83,6 +83,32 @@ img{
     border-top-right-radius: 20px;    
 }
 
+/* lato msg */
+.msgContainer{
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.msgBox{
+    width: 300px;
+    min-height: 50px;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+.msgBox.sent{
+    margin-left: auto;
+    background-color: #d5f9ba;
+
+}
+
+.msgBox.received{
+margin-right: autp;
+background-color: #fff;
+
+}
+
 /* input scrittura */
 .typeMsg{    
     position: absolute;
