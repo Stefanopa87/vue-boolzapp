@@ -95,13 +95,15 @@ function init(){
 
     selectedContact: "",
 
+    newMsg: "",
+
     
     },
 
 
 
     methods:{
-      add: function(){
+      searchName: function(){
         
 
         console.log('ciao');
@@ -111,10 +113,27 @@ function init(){
 
           this.selectedContact= "";
           
-          this.selectedContact= contact;
+          this.selectedContact= contact;        
+      },
+
+      writeMsg: function(){
+
+          if (this.newMsg.length > 0) {
+              console.log('inserito');
+
+
+
+            //   this.messages.push(this.newMsg);
+            }
+            
+        this.newMsg='';
 
         
+
+
       }
+
+
 
       
     },
