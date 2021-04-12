@@ -95,12 +95,8 @@ function init(){
 
     selectedContact: "",
 
-    newMsg: "",
-
-    
+    newMsg: "",        
     },
-
-
 
     methods:{
       searchName: function(){
@@ -118,17 +114,24 @@ function init(){
 
       writeMsg: function(){
 
+
           if (this.newMsg.length > 0) {
+
+            let message = {
+                
+                    date: '10/01/2020 16:15:22',
+                    text: this.newMsg,
+                    status: 'sent'
+
+            }
               console.log('inserito');
 
 
-
-            //   this.messages.push(this.newMsg);
+              this.selectedContact.messages.push(message);
             }
-            
-        this.newMsg='';
 
-        
+            
+        this.newMsg='';       
 
 
       }

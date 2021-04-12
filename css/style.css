@@ -105,6 +105,7 @@ img{
 /* lato msg */
 .msgContainer{
     padding: 15px;
+    max-height: calc(100% - 170px);
     overflow-y: auto;
 }
 
