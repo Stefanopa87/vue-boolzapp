@@ -26,50 +26,58 @@
 
                 <div class="bannerTopLeft">
 
+                    <!-- foto pro  filo -->
+                    <div class="profile">
 
-                
+                        <img :src="'img/' + profile['avatar']" alt="foto profilo">
 
-                <!-- foto profilo -->
-                <div class="profile">
+                        <span class="">{{ profile.name }}</span>
 
-                    <img :src="'img/' + profile['avatar']" alt="foto profilo">
+                        <div class="profile_icons">
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
 
-                    <span class="">{{ profile.name }}</span>
-                    
+                    <!-- area notifiche -->
+                    <div class="searchArea">
+                        <div class="circleBell">
+                            <i class="fa fa-bell-slash" aria-hidden="true"></i>
+                        </div>
+                        <div class="notificationArea">
+                            <span>Ricevi notifiche di nuovi messaggi</span>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
 
-                    <div class="profile_icons">
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                    <!-- area search -->
+                    <div class="input-group mb-1">
+                        <span @click="searchName" class="input-group-text" id="basic-addon1"><i
+                                class="fas fa-search"></i></span>
+                        <input v-model="searchText" @keyUp.enter="searchName" type="text" class="form-control"
+                            placeholder="Search Name" aria-label="Username" aria-describedby="basic-addon1">
                     </div>
                 </div>
 
-                <!-- area search -->
-                <div class="input-group mb-1">
-                    <span @click="searchName" class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                    <input v-model="searchText" @keyUp.enter="searchName" type="text" class="form-control" placeholder="Search Name" aria-label="Username"
-                        aria-describedby="basic-addon1">
-                </div>
-
-                </div>
-
                 <!-- lista contatti -->
-                <ul>
-                    <li v-for="contact in searchName()" @click="showMsg(contact)"
-                    :class="contact == selectedContact ? 'active' : ''">
-                        <img :src="'img/img' + contact.avatar + '.jpg'" alt="foto utenti">
-                        <span>{{contact.name}}</span>
-                    </li>
-                </ul>
+                <div class="contactArea">
+                    <ul>
+                        <li v-for="contact in searchName()" @click="showMsg(contact)"
+                            :class="contact == selectedContact ? 'active' : ''">
+                            <img :src="'img/img' + contact.avatar + '.jpg'" alt="foto utenti">
+                            <span>{{contact.name}}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
 
             <!-- MSG LIST -->
             <div id="msgList" class="col-9">
 
                 <!-- banner alto -->
                 <div class="bannerTopRight">
-                    <!-- questo v-if viene visto come: se esiste l'elemento -->
                     <div>
+                        <!-- questo v-if viene visto come: se esiste l'elemento -->
                         <img v-if="selectedContact.avatar" :src="'img/img' + selectedContact['avatar'] + '.jpg'"
                             alt="foto utenti">
                         <span>{{selectedContact.name}}</span>
@@ -90,33 +98,22 @@
 
                         <span class="msgText">{{ message.text }}</span>
                         <span class="msgTime">{{ message.date }}</span>
-
-                    </div> 
+                    </div>
                 </div>
 
                 <!-- input scrittura -->
                 <div class="input-group mb-3 typeMsg">
                     <span class="input-group-text" id="basic-addon1"><i class="far fa-smile"></i></span>
                     <!-- con v-model associo array vuoto di JS al canale input -->
-                    <input v-model="newMsg" @keyUp.enter="writeMsg" type="text" class="form-control" placeholder="Type a message"
-                        aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <span @click="writeMsg" class="input-group-text" id="basic-addon2"><i class="fas fa-share"></i></span>
+                    <input v-model="newMsg" @keyUp.enter="writeMsg" type="text" class="form-control"
+                        placeholder="Type a message" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <span @click="writeMsg" class="input-group-text" id="basic-addon2"><i
+                            class="fas fa-share"></i></span>
                     <span class="input-group-text" id="basic-addon2"><i class="fas fa-microphone-alt"></i></span>
                 </div>
-
             </div>
-
-
-
-
-
         </div>
     </div>
-
-
-
-
-
 </body>
 
 </html>
