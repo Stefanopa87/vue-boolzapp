@@ -95,18 +95,18 @@ function init() {
 
         methods: {
 
-             getTime: function () {
+            getTime: function () {
 
-                 var now = new Date();
-                 var nowStr = now.getDate() + '/' +
-                     now.getMonth() + '/' +
-                     now.getFullYear() + ' ' +
-                     now.getHours() + ':' +
-                     now.getMinutes() + ':' +
-                     now.getSeconds();
+                var now = new Date();
+                var nowStr = now.getDate() + '/' +
+                    now.getMonth() + '/' +
+                    now.getFullYear() + ' ' +
+                    now.getHours() + ':' +
+                    now.getMinutes() + ':' +
+                    now.getSeconds();
 
-                 return nowStr
-             },
+                return nowStr
+            },
 
             searchName: function () {
 
@@ -136,23 +136,40 @@ function init() {
 
                 }
                 this.newMsg = '';
-
                 
+                this.autoReply();                
             },
+            
+            autoReply: function () {
 
-           
+                // dichiaro una var che mi seleziona il contatto prima che parte 
+                // il setTimeout in quanto cosi anche se cambio contatto 
+                // il push verrà fatto sempre dentro la chat giusta.
 
-
+                var trueContact = this.selectedContact.messages
+                
+                setTimeout(() => {
+                    let message = {
+                        
+                        date: this.getTime(),
+                        text: 'ciao',
+                        status: 'received'
+                        
+                    }
+                    
+                    trueContact.push(message);                    
+                }, 2000);           
+            },
 
 
 
 
         },
 
-         updated() {
-             let container = this.$el.querySelector("#scrollBottom");
-             container.scrollTop = container.scrollHeight;
-         },
+        updated() {
+            let container = this.$el.querySelector("#scrollBottom");
+            container.scrollTop = container.scrollHeight;
+        },
     });
 }
 
