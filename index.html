@@ -46,7 +46,7 @@
                 <!-- area search -->
                 <div class="input-group mb-1">
                     <span @click="searchName" class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                    <input @keyUp.enter="searchName" type="text" class="form-control" placeholder="Search Name" aria-label="Username"
+                    <input v-model="searchText" @keyUp.enter="searchName" type="text" class="form-control" placeholder="Search Name" aria-label="Username"
                         aria-describedby="basic-addon1">
                 </div>
 
@@ -54,7 +54,7 @@
 
                 <!-- lista contatti -->
                 <ul>
-                    <li v-for="contact in contacts" @click="showMsg(contact)"
+                    <li v-for="contact in searchName()" @click="showMsg(contact)"
                     :class="contact == selectedContact ? 'active' : ''">
                         <img :src="'img/img' + contact.avatar + '.jpg'" alt="foto utenti">
                         <span>{{contact.name}}</span>
@@ -84,7 +84,7 @@
 
 
                 <!-- lato msg  -->
-                <div class="msgContainer">
+                <div id="scrollBottom" class="msgContainer">
 
                     <div v-for="message in selectedContact.messages" class="msgBox" :class="message.status">
 

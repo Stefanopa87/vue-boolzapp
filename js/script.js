@@ -88,6 +88,8 @@ function init() {
                 },
             ],
 
+            searchText: "",
+
             selectedContact: "",
 
             newMsg: "",
@@ -110,7 +112,27 @@ function init() {
 
             searchName: function () {
 
-                console.log('ciao');
+                // questo array vuoto ci aiuta a far ciclare su tutti i nomi anche se non 
+                // è stata avviata una ricerca, questo perchè ogni stringa contiene una stringa
+                // vuota (deciso di default) quindi anche se array è vuoto e search è vuoto
+                // il risultato di .includes() è sempre vero e quindi tutti i
+                // nomi sono visibili
+                const resContacts = [];
+                for (let i = 0; i < this.contacts.length; i++) {
+
+                    const contact = this.contacts[i];
+
+                    const name = contact['name'];
+
+                    if (name.toLowerCase()
+                        .includes(this.searchText.toLowerCase())) {
+
+                        resContacts.push(contact);
+                    }
+                }
+                return resContacts;
+
+
             },
 
             showMsg: function (contact) {
@@ -136,10 +158,10 @@ function init() {
 
                 }
                 this.newMsg = '';
-                
-                this.autoReply();                
+
+                this.autoReply();
             },
-            
+
             autoReply: function () {
 
                 // dichiaro una var che mi seleziona il contatto prima che parte 
@@ -147,23 +169,30 @@ function init() {
                 // il push verrà fatto sempre dentro la chat giusta.
 
                 var trueContact = this.selectedContact.messages
-                
+
                 setTimeout(() => {
+
+                    var min = 0;
+                    var max = 5;
+                    var random = Math.floor(Math.random() * (max - min + 1)) + min;
+
+                    var msg = ['puoi scrivere cose sensate?',
+                        'certo come no, vai avanti tu..',
+                        'la penso come te..',
+                        'sicurmente è come dici..',
+                        'ci pensiamo domani?',
+                        'la vedo difficile ma ci proviamo..'];
+
                     let message = {
-                        
+
                         date: this.getTime(),
-                        text: 'ciao',
+                        text: msg[random],
                         status: 'received'
-                        
                     }
-                    
-                    trueContact.push(message);                    
-                }, 2000);           
+
+                    trueContact.push(message);
+                }, 1000);
             },
-
-
-
-
         },
 
         updated() {
