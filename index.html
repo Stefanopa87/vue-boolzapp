@@ -26,7 +26,7 @@
 
                 <div class="bannerTopLeft">
 
-                    <!-- foto pro  filo -->
+                    <!-- foto profilo -->
                     <div class="profile">
 
                         <img :src="'img/' + profile['avatar']" alt="foto profilo">
@@ -75,7 +75,7 @@
             <div id="msgList" class="col-9">
 
                 <!-- banner alto -->
-                <div class="bannerTopRight">
+                <div class="bannerTopRight" v-if="selectedContact">
                     <div>
                         <!-- questo v-if viene visto come: se esiste l'elemento -->
                         <img v-if="selectedContact.avatar" :src="'img/img' + selectedContact['avatar'] + '.jpg'"
@@ -90,6 +90,11 @@
                     </div>
                 </div>
 
+                <!-- foto pre contatto -->
+                <div v-if="!selectedContact" class="wifiArea">
+                    <img src="img/telwifi.webp" alt="">
+                </div>
+
 
                 <!-- lato msg  -->
                 <div id="scrollBottom" class="msgContainer">
@@ -102,7 +107,7 @@
                 </div>
 
                 <!-- input scrittura -->
-                <div class="input-group mb-3 typeMsg">
+                <div v-if="selectedContact" class="input-group mb-3 typeMsg">
                     <span class="input-group-text" id="basic-addon1"><i class="far fa-smile"></i></span>
                     <!-- con v-model associo array vuoto di JS al canale input -->
                     <input v-model="newMsg" @keyUp.enter="writeMsg" type="text" class="form-control"

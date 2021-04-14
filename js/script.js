@@ -131,8 +131,6 @@ function init() {
                     }
                 }
                 return resContacts;
-
-
             },
 
             showMsg: function (contact) {
@@ -151,7 +149,6 @@ function init() {
                         date: this.getTime(),
                         text: this.newMsg,
                         status: 'sent'
-
                     }
 
                     this.selectedContact.messages.push(message);
@@ -195,6 +192,7 @@ function init() {
             },
         },
 
+        // questa serve per far stare lo scroll sembre lato bottom
         updated() {
             let container = this.$el.querySelector("#scrollBottom");
             container.scrollTop = container.scrollHeight;

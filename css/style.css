@@ -131,6 +131,18 @@ img{
     justify-content: space-between;
 }
 
+.wifiArea{
+    height: 100%;
+    display: flex;
+    justify-content: center;  
+    align-items: center;   
+}
+
+.wifiArea img{
+    height: 50vh;
+    width: 50vw;
+}
+
 /* lato msg */
 .msgContainer{
     padding: 15px;
